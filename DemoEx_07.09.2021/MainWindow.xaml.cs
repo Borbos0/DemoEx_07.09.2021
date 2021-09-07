@@ -23,6 +23,25 @@ namespace DemoEx_07._09._2021
         public MainWindow()
         {
             InitializeComponent();
+            LoginFrame.Navigate(new LoginPage());
+            Admin.MainFrame = LoginFrame;
+        }
+
+        private void LoginFrame_ContentRendered(object sender, EventArgs e)
+        {
+            if (LoginFrame.CanGoBack)
+            {
+                BtnBack.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BtnBack.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Admin.MainFrame.GoBack();
         }
     }
 }

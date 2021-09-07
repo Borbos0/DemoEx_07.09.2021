@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DemoEx_07._09._2021"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Компания Попрыженок" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Image Source="Resources/logo.png" HorizontalAlignment="Left"></Image>
+        <TextBlock Text="Компания Попрыженок" HorizontalAlignment="Center"></TextBlock>
+        <Grid Background="#43DCFE" Panel.ZIndex="-2"></Grid>
+        <Grid Grid.Row="2" Background="#F9969E"></Grid>
+        <Frame NavigationUIVisibility="Hidden" ContentRendered="LoginFrame_ContentRendered" Grid.Row="1" Name="LoginFrame"></Frame>
+        <Button Content="Back" HorizontalAlignment="Right" Name="BtnBack" Click="BtnBack_Click" />
     </Grid>
 </Window>
